@@ -78,7 +78,7 @@ module.exports = grammar(J, {
     comment: (_$) => token(seq("#", /.*/)),
 
     identifier: (_) =>
-      token(field("variable", /[A-Za-z_\.\-]+[A-Za-z0-9_\.\-]*/)),
+      token(field("variable", /[A-Za-z_\.\-]+[A-Za-z0-9_\.\-/]*/)),
 
     string: ($, original) => choice(original, prec(1, $.identifier)),
     _value: ($) =>
